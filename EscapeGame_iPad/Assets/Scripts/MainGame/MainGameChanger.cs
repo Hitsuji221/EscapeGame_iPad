@@ -21,6 +21,8 @@ public class MainGameChanger : MonoBehaviour
     [SerializeField] GameObject alert3Text;
     [SerializeField] GameObject room2Girl;
     [SerializeField] GameObject room2Boy;
+    [SerializeField] GameObject room3Boy;
+    [SerializeField] GameObject room5Girl;
     [SerializeField] AudioClip clickDoor;
     [SerializeField] AudioClip wateraudio;
     [SerializeField] AudioClip itemaudio;
@@ -33,6 +35,9 @@ public class MainGameChanger : MonoBehaviour
     public GameObject backArrow;
 
     public GameObject message3;
+    public GameObject message4;
+    public GameObject message5;
+
     public GameObject stomacbutton;
     public GameObject tileGame;
     //public GameObject Room5copy;
@@ -183,6 +188,21 @@ public class MainGameChanger : MonoBehaviour
         audioSource.PlayOneShot(itemaudio);
     }
 
+    public void OnClickBoyRoom3(){
+        message4.SetActive(true);
+        itemBox.SetActive(false);
+        HideArrow();
+
+    }
+    public void BackRoom3(){
+        this.transform.localPosition = new Vector2(-4400,0);
+        currentPanelStr = "Room3Panel1";
+        itemBox.SetActive(true);
+        rightArrow.SetActive(true);
+        leftArrow.SetActive(true);
+        room3Boy.SetActive(false);
+    }
+
 
     //Room4
     public void OnClickStomacGirl(){
@@ -248,6 +268,9 @@ public class MainGameChanger : MonoBehaviour
         itemBox.SetActive(false);
     }
 
+    public void OnclickGirlRoom5(){
+        message5.SetActive(true);
+    }
 
     //Room6
     public void OnStatu(){

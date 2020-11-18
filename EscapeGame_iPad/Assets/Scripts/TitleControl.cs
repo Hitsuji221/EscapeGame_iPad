@@ -14,13 +14,13 @@ public class TitleControl : MonoBehaviour
     }
 
     public void OnClickIntro(){
-        this.transform.localPosition=new Vector2(-1200,0);
+        this.transform.localPosition=new Vector2(-2200,0);
         currentPanelStr = "Intro1";
         message1.SetActive(true);
     }
 
     public void OnClickGameStart(){
-        this.transform.localPosition=new Vector2(-2400,0);
+        this.transform.localPosition=new Vector2(-4400,0);
         currentPanelStr = "Room1";
     }
 }
