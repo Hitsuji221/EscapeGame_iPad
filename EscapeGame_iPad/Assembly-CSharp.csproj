@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\QuizGame\Movement.cs" />
      <Compile Include="Assets\Scripts\SceneMove\GoToAfterRoom5.cs" />
      <Compile Include="Assets\Scripts\SceneMove\GoToMain.cs" />
+     <Compile Include="Assets\Scripts\SceneMove\GoToTitle.cs" />
      <Compile Include="Assets\Scripts\StageManager.cs" />
      <Compile Include="Assets\Scripts\TileManager.cs" />
      <Compile Include="Assets\Scripts\Tile_Rule.cs" />
