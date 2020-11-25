@@ -14,11 +14,14 @@ public class AfterMain : MonoBehaviour
     public GameObject exitArrow;
     public GameObject message4;
     public GameObject message6;
+    public GameObject message8;
     public GameObject sewing;
     public GameObject sewingImage;
+    public GameObject Panel1Slide1;
 
     [SerializeField] AudioClip clickDoor;
     [SerializeField] AudioClip exit;
+    [SerializeField] AudioClip itemaudio;
     AudioSource audioSource;
 
     string currentPanelStr = "Room5Copy";
@@ -139,9 +142,14 @@ public class AfterMain : MonoBehaviour
     public void OnClickBackRoom(){
         this.transform.localPosition=new Vector2(-15400,0);
         currentPanelStr = "Room6After";
-        exitArrow.SetActive(true);
     } 
-
+    public void OnClickRoom6AfterGirl(){
+        message8.SetActive(true);
+    }
+    public void OnClickBackRoom2(){
+        Panel1Slide1.SetActive(false);
+        exitArrow.SetActive(true);
+    }
     public void ExitArrow(){
         this.transform.localPosition=new Vector2(-15400,1600);
         currentPanelStr = "Slide1";
@@ -154,10 +162,17 @@ public class AfterMain : MonoBehaviour
     public void OnClickSewing(){
         sewing.SetActive(false);
         sewingImage.SetActive(true);
+        audioSource.PlayOneShot(itemaudio);
     } 
     public void OnClickSewingPanel(){
         sewingImage.SetActive(false);
     } 
+
+    //Ending
+    public void BackTitle(){
+        this.transform.localPosition=new Vector2(-15400,3200);
+        currentPanelStr = "EndTitle";
+    }
 
      //Arrows
     public void OnBackArrow(){

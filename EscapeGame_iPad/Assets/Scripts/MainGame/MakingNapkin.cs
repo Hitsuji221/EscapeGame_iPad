@@ -30,6 +30,9 @@ public class MakingNapkin : MonoBehaviour
     public GameObject rightArrow;
     string currentPanelStr = "Image1";
 
+    [SerializeField] AudioClip incorrect;
+    AudioSource audioSource;
+
     void Start(){
         answerisno.SetActive(false);
         answerpanel.SetActive(false);
@@ -37,6 +40,7 @@ public class MakingNapkin : MonoBehaviour
         message1.SetActive(false);
         message2.SetActive(false);
         rightArrow.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
     }
 
     void HideSelect(){
@@ -114,6 +118,7 @@ public class MakingNapkin : MonoBehaviour
     void OnClickOtherOne(){
         answerisno.SetActive(true);
         answerpanel.SetActive(true);
+        audioSource.PlayOneShot(incorrect);
     }
     void OnClickCorrectOne(){
         answerisno.SetActive(false);
