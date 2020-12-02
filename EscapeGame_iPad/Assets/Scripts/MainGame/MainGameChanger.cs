@@ -38,8 +38,8 @@ public class MainGameChanger : MonoBehaviour
     public GameObject message4;
     public GameObject message5;
 
-    public GameObject stomacbutton;
     public GameObject tileGame;
+    public GameObject lookButton;
     //public GameObject Room5copy;
 
     string currentPanelStr = "Room1Panel0";
@@ -50,7 +50,6 @@ public class MainGameChanger : MonoBehaviour
         tileGame.SetActive(true);
         itemBox.SetActive(true);
         message3.SetActive(false);
-        stomacbutton.SetActive(false);
         room2Boy.SetActive(true);
         room2Girl.SetActive(true);
         audioSource = GetComponent<AudioSource>();
@@ -110,7 +109,6 @@ public class MainGameChanger : MonoBehaviour
     }
     public void OnClickGirlRoom2(){
         message3.SetActive(true);
-        stomacbutton.SetActive(true);
         itemBox.SetActive(false);
     }
     public void OnToRoom2Panel2Door(){
@@ -127,6 +125,7 @@ public class MainGameChanger : MonoBehaviour
     public void OnLookButton(){
         HideArrow();
         itemBox.SetActive(false);
+        lookButton.SetActive(false);
         if(currentPanelStr == "Room2Panel2"){
             this.transform.localPosition=new Vector2(-2200,4800);
             currentPanelStr = "Room2Sikyu1";
@@ -140,7 +139,6 @@ public class MainGameChanger : MonoBehaviour
         currentPanelStr = "Room2Panel1";
         room2Boy.SetActive(false);
         room2Girl.SetActive(false);
-        stomacbutton.SetActive(false);
     }
 
 
@@ -417,6 +415,12 @@ public class MainGameChanger : MonoBehaviour
         audioSource.PlayOneShot(itemaudio);
         map.SetActive(true);
         LookPlay.SetActive(false);
+        this.transform.localPosition=new Vector2(0,4800);
+        currentPanelStr = "SlideMap";
+    }
+    public void MapExplaneArrow(){
+        this.transform.localPosition=new Vector2(0,0);
+        currentPanelStr = "Room1Panel0";
     }
 
 }
