@@ -31,6 +31,7 @@ public class MakingNapkin : MonoBehaviour
     string currentPanelStr = "Image1";
 
     [SerializeField] AudioClip incorrect;
+    [SerializeField] AudioClip complete;
     AudioSource audioSource;
 
     void Start(){
@@ -134,6 +135,7 @@ public class MakingNapkin : MonoBehaviour
         toolBox.SetActive(false);
         rightArrow.SetActive(true);
         OnClickCorrectOne();
+        audioSource.PlayOneShot(complete);
     }
     public void OnClickNapkin(){
         if(currentPanelStr == "Image4"){
@@ -168,6 +170,7 @@ public class MakingNapkin : MonoBehaviour
         toolBox.SetActive(false);
         rightArrow.SetActive(true);
         OnClickCorrectOne();
+        audioSource.PlayOneShot(complete);
     }
     public void OnClickNapMaw(){
         if(currentPanelStr == "Image71"){

@@ -7,11 +7,6 @@ public class Tile_Rule : MonoBehaviour
     public GameObject rightArrow;
     string currentPanelStr = "Slide1";
 
-    void Start()
-    {
-        rightArrow.SetActive(false);
-    }
-
     public void OnClickStart(){
         this.transform.localPosition=new Vector2(0,1600);
         currentPanelStr = "Slide1";
